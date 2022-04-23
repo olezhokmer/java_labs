@@ -1,35 +1,54 @@
 package com.company.services;
 
+import com.company.exceptions.EmptyManufacturerException;
+import com.company.exceptions.EmptyProductNameException;
 import com.company.models.IndustrialProduct;
 import com.company.repositories.IndustrialProductRepository;
+import com.company.validators.IndustrialProductValidator;
+import com.company.views.View;
 
 public class IndustrialProductService {
+    private View view;
     private IndustrialProductRepository productRepository;
+    private IndustrialProductValidator productValidator;
+
     public IndustrialProductService() {
         this.productRepository = new IndustrialProductRepository();
+        this.productValidator = new IndustrialProductValidator();
+        this.view = new View();
     }
 
-    public String[] getManufacturersByProductName(String name) {
-        String[] manufactures = new String[] {};
-        IndustrialProduct[] products = this.productRepository.findAll();
-        for(IndustrialProduct product: products) {
-            if(product.getName() == name) {
-                manufactures = push(product.getManufacturer(), manufactures);
+    public String[] getManufacturersByProductName(String name) throws EmptyProductNameException {
+        try {
+            this.productValidator.validateProductName(name);
+            String[] manufactures = new String[] {};
+            IndustrialProduct[] products = this.productRepository.findAll();
+            for(IndustrialProduct product: products) {
+                if(product.getName().equals(name)) {
+                    manufactures = push(product.getManufacturer(), manufactures);
+                }
             }
+            return manufactures;
+        } catch (Exception exception) {
+            throw exception;
         }
-        return manufactures;
     }
 
-    public IndustrialProduct[] getProductsByManufacturer(String manufacturer) {
-        IndustrialProduct[] filteredProducts = new IndustrialProduct[] {};
-        IndustrialProduct[] products = this.productRepository.findAll();
+    public IndustrialProduct[] getProductsByManufacturer(String manufacturer) throws EmptyManufacturerException {
+        try {
+            this.productValidator.validateManufacturer(manufacturer);
+            IndustrialProduct[] filteredProducts = new IndustrialProduct[] {};
+            IndustrialProduct[] products = this.productRepository.findAll();
 
-        for(IndustrialProduct product: products) {
-            if(product.getManufacturer() == manufacturer) {
-                filteredProducts = push(product, filteredProducts);
+            for(IndustrialProduct product: products) {
+                if(product.getManufacturer().equals(manufacturer)) {
+                    filteredProducts = push(product, filteredProducts);
+                }
             }
+            return filteredProducts;
+        } catch (Exception exception) {
+            throw exception;
         }
-        return filteredProducts;
     }
 
     public static IndustrialProduct[] push(IndustrialProduct product, IndustrialProduct[] products) {
