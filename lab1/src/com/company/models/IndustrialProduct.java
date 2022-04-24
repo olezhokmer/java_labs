@@ -3,14 +3,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class IndustrialProduct {
-    private int registrationNumber;
+    private long registrationNumber;
     private String name;
     private String model;
-    private int amount;
+    private long amount;
     private String manufacturer;
     private Date creationDate;
 
-    public int getRegistrationNumber() {
+    public long getRegistrationNumber() {
         return registrationNumber;
     }
 
@@ -22,7 +22,7 @@ public class IndustrialProduct {
         return model;
     }
 
-    public int getAmount() {
+    public long getAmount() {
         return amount;
     }
 
@@ -46,7 +46,7 @@ public class IndustrialProduct {
         this.model = model;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(long amount) {
         this.amount = amount;
     }
 
@@ -58,7 +58,7 @@ public class IndustrialProduct {
         this.creationDate = creationDate;
     }
 
-    public IndustrialProduct(int registrationNumber, String name, String model, int amount, String manufacturer, Date creationDate) {
+    public IndustrialProduct(long registrationNumber, String name, String model, long amount, String manufacturer, Date creationDate) {
         this.registrationNumber = registrationNumber;
         this.name = name;
         this.model = model;

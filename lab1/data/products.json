@@ -1,0 +1,72 @@
+[
+  {
+    "registrationNumber": 651,
+    "name": "Meat",
+    "model": "Chicken stake",
+    "amount": 350,
+    "manufacturer": "Megamarket Inc."
+  },
+  {
+    "registrationNumber": 2765,
+    "name": "Car",
+    "model": "Model S",
+    "amount": 25,
+    "manufacturer": "Tesla"
+  },
+  {
+    "registrationNumber": 365,
+    "name": "TV",
+    "model": "TV Model",
+    "amount": 150,
+    "manufacturer": "Samsung"
+  },
+  {
+    "registrationNumber": 344,
+    "name": "Car",
+    "model": "Model X",
+    "amount": 50,
+    "manufacturer": "Tesla"
+  },
+  {
+    "registrationNumber": 231,
+    "name": "Car",
+    "model": "Land Cruiser",
+    "amount": 40,
+    "manufacturer": "Toyota"
+  },
+  {
+    "registrationNumber": 1778,
+    "name": "Table",
+    "model": "wooden",
+    "amount": 10,
+    "manufacturer": "Furniture Inc."
+  },
+  {
+    "registrationNumber": 6651,
+    "name": "Meat",
+    "model": "stake",
+    "amount": 10090,
+    "manufacturer": "Megamarket Inc."
+  },
+  {
+    "registrationNumber": 5671,
+    "name": "Meat",
+    "model": "beef",
+    "amount": 5000,
+    "manufacturer": "Beef Inc."
+  },
+  {
+    "registrationNumber": 89061,
+    "name": "Table",
+    "model": "desc5436",
+    "amount": 50,
+    "manufacturer": "Megamarket Inc."
+  },
+  {
+    "registrationNumber": 41,
+    "name": "TV",
+    "model": "LG5345345",
+    "amount": 1000,
+    "manufacturer": "LG"
+  }
+]

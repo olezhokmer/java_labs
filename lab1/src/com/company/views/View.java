@@ -1,6 +1,8 @@
 package com.company.views;
 
 import com.company.models.IndustrialProduct;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class View {
@@ -21,12 +23,24 @@ public class View {
         }
     }
 
+    public void outputProducts(ArrayList<IndustrialProduct> products) {
+        for(IndustrialProduct product: products) {
+            this.outputString(product.toString());
+        }
+    }
+
     public void outputString(String value) {
         System.out.println(value);
     }
 
     public void outputStringArray(String[] arr) {
         for(String str: arr) {
+            this.outputString(str);
+        }
+    }
+
+    public void outputStringArray(ArrayList<String> list) {
+        for(String str: list) {
             this.outputString(str);
         }
     }

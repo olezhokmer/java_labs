@@ -1,13 +1,17 @@
 package com.company.repositories;
 
-public class Repository<Type> {
-    private Type[] data;
+import com.company.models.IndustrialProduct;
 
-    public Repository(Type[] data) {
+import java.util.ArrayList;
+
+public class Repository<Type> {
+    private ArrayList<Type> data;
+
+    public Repository(ArrayList<Type> data) {
         this.data = data;
     }
 
-    public Type[] findAll() {
+    public ArrayList<Type> findAll() {
         return data;
     }
 }
