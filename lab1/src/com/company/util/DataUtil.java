@@ -6,16 +6,14 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class DataUtil {
     public DataUtil() { }
 
-    private String getDataFolderPath() {
+    public String getDataFolderPath() {
         return System.getProperty("user.dir") + "/data/";
     }
 
@@ -63,5 +61,16 @@ public class DataUtil {
         Date creationDate = new Date();
 
         return new IndustrialProduct(registrationNumber, name, model, amount, manufacturer, creationDate);
+    }
+
+    public void writeFile(String message, String filePath) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true));
+            writer.write(message);
+
+            writer.close();
+        } catch (IOException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 }

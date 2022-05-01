@@ -14,7 +14,9 @@ import java.util.Date;
 public class Main {
     private static IndustrialProductController productController = new IndustrialProductController();
     private static View view = new View();
+    private static ErrorHandler errorHandler = new ErrorHandler();
     public static void main(String[] args) {
+
         for (ControllerName controllerName : ControllerName.values()) {
             callController(controllerName);
         }
@@ -30,11 +32,11 @@ public class Main {
 
                 break;
             } catch (SystemException exception) {
-                view.outputString(exception.getMessage());
+                errorHandler.handleError(exception);
                 continue;
             } catch (Exception exception) {
                 view.errorNotification();
-                view.outputString(exception.getMessage());
+                errorHandler.handleError(exception);
                 break;
             }
         }
