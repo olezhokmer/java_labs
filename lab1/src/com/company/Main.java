@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.controllers.CollectionsController;
 import com.company.controllers.IndustrialProductController;
 import com.company.enums.ControllerName;
 import com.company.exceptions.EmptyManufacturerException;
@@ -13,6 +14,7 @@ import java.util.Date;
 
 public class Main {
     private static IndustrialProductController productController = new IndustrialProductController();
+    private static CollectionsController collectionController = new CollectionsController();
     private static View view = new View();
     private static ErrorHandler errorHandler = new ErrorHandler();
     public static void main(String[] args) {
@@ -29,6 +31,8 @@ public class Main {
                     productController.getManufacturersByProductName();
                 else if(controllerName == ControllerName.getProductsByManufacturer)
                     productController.getProductsByManufacturer();
+                else if(controllerName == ControllerName.sortCollection)
+                    collectionController.sortCollection();
 
                 break;
             } catch (SystemException exception) {

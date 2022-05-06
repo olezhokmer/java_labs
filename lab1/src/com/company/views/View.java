@@ -17,6 +17,12 @@ public class View {
         return value;
     }
 
+    public Integer readInteger() {
+        Integer value = this.scanner.nextInt();
+
+        return value;
+    }
+
     public void outputProducts(IndustrialProduct[] products) {
         for(IndustrialProduct product: products) {
             this.outputString(product.toString());
@@ -45,10 +51,28 @@ public class View {
         }
     }
 
+    public void outputCollection(ArrayList<Integer> list) {
+        for(Integer number: list) {
+            System.out.print(number.toString() + "; ");
+        }
+        System.out.println("");
+    }
+
     public void enterProductNameMessage() {
         this.outputString("Enter a product name below.");
     }
 
+    public void enterDividerNumber() {
+        this.outputString("Enter divider value.");
+    }
+
+    public void enterCollectionLength() {
+        this.outputString("Enter collection length.");
+    }
+
+    public void enterBoundValue() {
+        this.outputString("Enter bound value.");
+    }
     public void enterManufacturerNameMessage() {
         this.outputString("Enter a manufacturer name below");
     }
