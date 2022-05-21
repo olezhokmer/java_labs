@@ -8,7 +8,6 @@ import com.company.exceptions.EmptyProductNameException;
 import com.company.exceptions.SystemException;
 import com.company.models.IndustrialProduct;
 import com.company.views.View;
-
 import java.util.ArrayList;
 import java.util.Date;
 
